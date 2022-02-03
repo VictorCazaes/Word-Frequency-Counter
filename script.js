@@ -12,13 +12,13 @@ check.addEventListener('click', () => {
     const inputLength = arrayWords.length;
     arrayWords.forEach(word => {
         const newArrayWords = arrayWords.filter(eachWord => eachWord != word);
-        const lengthAfter = inputLength - newArrayWords.length;
-        resultArray = result.split(' ');
+        const wordCount = inputLength - newArrayWords.length;
+        const resultArray = result.split(' ');
         if (resultArray.includes(word)) {
             return;
         } else {
             result = `${result} ${word}`;
-            display.innerHTML = display.innerHTML + `<div class="display-content">${word.toUpperCase()} = ${lengthAfter} times</div>`;
+            display.innerHTML = display.innerHTML + `<div class="display-content">${word.toUpperCase()} = ${wordCount} times</div>`;
         }
 
     });
